@@ -19,8 +19,12 @@ RUN wget https://github.com/RavenProject/Ravencoin/releases/download/v2.1.3/rave
 RUN wget https://github.com/RavenProject/Ravencoin/releases/download/v2.1.3/raven-2.1.3.0-x86_64-linux-gnu.tar.gz.md5sum
 RUN wget https://github.com/RavenProject/Ravencoin/releases/download/v2.1.3/raven-2.1.3.0-x86_64-linux-gnu.tar.gz.sha256sum
 
-# Run stuff
+# Run checksums
 WORKDIR /home/bin
 RUN [ "$(md5sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz)" == "$(cat raven-2.1.3.0-x86_64-linux-gnu.tar.gz.md5sum)" ]
 
-# RUN [ "$(sha256sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz.sha256sum)" == "$(cat raven-2.1.3.0-x86_64-linux-gnu.tar.gz.sha256sum)" ]
+RUN [ "$(sha256sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz)" == "$(cat raven-2.1.3.0-x86_64-linux-gnu.tar.gz.sha256sum)" ]
+
+# Extract and start ravend binary
+RUN tar xvzf raven-2.1.3.0-x86_64-linux-gnu.tar.gz
+ENTRYPOINT ["./raven-2.1.3.0/bin/ravend"]
