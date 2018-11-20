@@ -21,19 +21,6 @@ RUN wget https://github.com/RavenProject/Ravencoin/releases/download/v2.1.3/rave
 RUN wget https://github.com/RavenProject/Ravencoin/releases/download/v2.1.3/raven-2.1.3.0-x86_64-linux-gnu.tar.gz.md5sum
 RUN wget https://github.com/RavenProject/Ravencoin/releases/download/v2.1.3/raven-2.1.3.0-x86_64-linux-gnu.tar.gz.sha256sum
 
-# Install RVM
-RUN mkdir /home/Ruby
-WORKDIR /home/Ruby
-RUN yum install -y patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel bzip2 bison iconv-devel sqlite-devel
-RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import - && curl -L get.rvm.io | bash -s stable 
-RUN /bin/bash -l -c ". /etc/profile.d/rvm.sh && rvm install 2.3.3"
-# RUN  source /etc/profile.d/rvm.sh && usermod -aG rvm root && cat /etc/profile.d/ && rvm reload 
-RUN /bin/bash -l -c "rvm requirements run"
-
-# Install gems
-RUN echo "gem: --no-rdoc --no-ri" > ~/.gemrc
-RUN /bin/bash -l -c "gem install sinatra"
-
 # Run checksums
 WORKDIR /home/bin
 RUN [ "$(md5sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz)" == "$(cat raven-2.1.3.0-x86_64-linux-gnu.tar.gz.md5sum)" ]
