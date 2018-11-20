@@ -9,8 +9,8 @@ RUN yum -y install wget
 
 # Install vim
 RUN yum -y install epel-release
-RUN curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo 
-RUN yum -y install neovim
+RUN curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo
+RUN yum -y install vim
 
 # Install Raven binaries
 RUN mkdir /home/bin
@@ -25,6 +25,6 @@ RUN [ "$(md5sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz)" == "$(cat raven-2.1.3.0-
 
 RUN [ "$(sha256sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz)" == "$(cat raven-2.1.3.0-x86_64-linux-gnu.tar.gz.sha256sum)" ]
 
-# Extract and start ravend binary
-RUN tar xvzf raven-2.1.3.0-x86_64-linux-gnu.tar.gz
-ENTRYPOINT ["./raven-2.1.3.0/bin/ravend"]
+# Extract and start ravend
+RUN tar xvzf raven-2.1.3.0-x86_64-linux-gnu.tar.gz && cp raven-2.1.3.0/bin/* .
+RUN echo './ravend &' >> /root/.bashrc
