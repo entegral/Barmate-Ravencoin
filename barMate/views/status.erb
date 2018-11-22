@@ -1,0 +1,39 @@
+<h1>Ravencoin Network Info:</h1>
+<p><%= @rvn_network_info %></p>
+<br>
+<br>
+<h1>Ravencoin Mining Info:</h1>
+<p><%= @rvn_mining_info %></p>
+<ul>
+  <li>Blocks = <%= @rvn_mining_info["blocks"] %></li>
+  <li>Current Block Transactions = <%= @rvn_mining_info["currentblocktx"] %></li>
+  <li>Difficulty = <%= @rvn_mining_info["difficulty"] %></li>
+  <li>Pooled Txns = <%= @rvn_mining_info["pooledtx"] %></li>
+</ul>
+<br>
+<br>
+<h1>Ravencoin Mem Pool Info:</h1>
+<p><%= @rvn_mempool_info %></p>
+<ul>
+  <li>Size = <%= @rvn_mempool_info["size"] %></li>
+  <li>Transaction size (MB (Bytes)) = <%= @rvn_mempool_info["bytes"]/1000000 %>(<%= @rvn_mempool_info["bytes"] %>)</li>
+  <li>Total memory usage (MB (B)) = <%= @rvn_mempool_info["usage"]/1000000 %>(<%= @rvn_mempool_info["usage"] %>)</li>
+  <li>Maximum memory usage for the mempool = <%= @rvn_mempool_info["maxmempool"]/1000000 %>(<%= @rvn_mempool_info["maxmempool"] %>)</li>
+  <li>The lowest fee per kilobyte paid by any transaction in the memory pool = <%= @rvn_mempool_info["mempoolminfee"] %> RVN</li>
+</ul>
+<br>
+<br>
+<h1>Ravencoin Blockchain Info:</h1>
+<p><%= @rvn_blockchain_info %></p>
+<ul>
+  <li>Block Height = <%= @rvn_blockchain_info["blocks"] %></li>
+  <li>Difficulty Algo = <%= @rvn_blockchain_info["difficulty_algorithm"] %></li>
+  <li>Network Difficulty = <%= @rvn_blockchain_info["difficulty"] %></li>
+  <li>Size On Disk = <%= @rvn_blockchain_info["size_on_disk"] %></li>
+</ul>
+<br>
+<br>
+<h1>Ravencoin Wallet Info</h1>
+<p><%= @rvn_wallet_info %></p>
+
+getmininginfo
