@@ -1,0 +1,7 @@
+docker build -t barmate:current  .
+docker run -d \
+    --network raven-net \
+    --ip 172.19.0.3 \
+    --name barmate \
+    --mount source=barMate,target=/data-warehouse \
+    barmate:current /bin/bash 

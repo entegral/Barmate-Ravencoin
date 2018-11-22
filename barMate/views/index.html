@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Cinzel|Permanent+Marker|Ropa+Sans|Shadows+Into+Light" rel="stylesheet">
+  <script src="js/jquery.js"></script>
+  <script src="js/script_customerSide.js"></script>
+  <script src="js/script_companySide.js"></script>
+  <title>barMate</title>
+</head>
+<body id="body">
+  <div class="row">
+    <p><br><br></p>
+  </div>
+<div class="video-wrapper">
+    <video poster="video/video.jpg" id="bgvid" playsinline autoplay muted loop>
+      <source src="video/video.mp4" type="video/mp4">
+      </video>
+      <h3><img id="logo" src="images/logo.png">
+        <p id="versionNum">v0.9</p>
+      </h3>
+</div>
+<br>
+    <div class="container" id="selection">
+      <p class ="lead text-center" id="explanation" >
+        barMate offers an easy to use solution for handling a large volume of customer drink orders, improving service efficency, and provides an interpretable business side interface
+      </p>
+      <div class="content">
+        <h4 class="text-center" id="openQ">Which are you?</h4>
+        <br>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <figure>
+              <img id="customerPic" src="images/bckgrnd/customers.jpg" class="img-responsive">
+            </figure>
+            <div >
+              <h3 class="head">Customer</h3>
+              <p class="body">With a sleek and easy to use interface simply select the beer of choice and a description of the beer will appear as it is added to your order. Don't want the beer? Simply unclick the beer</p>
+              <p>
+                <br>
+              </p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <figure>
+              <img id ="companyPic" src="images/bckgrnd/company.jpg" class="img-responsive">
+            </figure>
+            <div>
+              <h3 class="head">Company</h3>
+              <p class="body">View all current drink tickets, open tabs, and inform users that their order is ready.</p>
+              <p>
+                <br>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" id="theRows">
+      <div id="customerSide">
+        <div class="container-fluid">
+          <form id="form1" action="index.html" method="post">
+
+          </form>
+        </div>
+
+
+
+          <!--Floating Menu -->
+
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+          <div class="empty">
+            <br>
+          </div>
+          <nav class="fixed-nav-bar">
+              <div id="menu" class="menu">
+                  <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
+              </div>
+            </nav>
+
+          <!-- Floating Menu -->
+          <div id="sidenav">
+            <div class="card sideNavCard" id="useless" style="width: 20rem;">
+              <div class="card-body" id="userInfo">
+                <div class="form-check">
+                  <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h6 class="card-title name-form">Please enter your name, number, and date of birth below</h6>
+                  <input type="text" id="first-name" placeholder="First Name">
+                  <input type="text" id="last-name" placeholder="Last Name">
+                  <input type="text" id="phone-number" placeholder="Phone Number">
+                  <input id="date-of-birth" type="date">
+                </div>
+              </div>
+              <div id="orderButtons">
+                <button type="button" class="btn btn-outline-info" name="button" id="submitOrderButton">Submit order</button>
+              </div>
+            </div>
+            <div class="card sideNavCard" style="width: 20rem;">
+              <button type="submit" class="btn btn-outline-info" name="button" id="startOrder">Order</button>
+            </div>
+            <div class="card sideNavCard" id="tab" style="width: 20rem;">
+              <button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="card-body">
+                <h6 class="card-title">The items currently on your tab are:</h6>
+                <div id="currentTab">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <div class="row" id="companySide">
+            <div class="row">
+              <div class="col-6" id="outstandingTickets">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Here are the outstanding tickets:</h4>
+                    <ol class="card-text" id="ticketList"></ol>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6" id="completedTickets">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Your order is ready! Please come to the bar!</h4>
+                    <ol class="card-text" id="readyList"></ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="authenticate">
+            <h5>Welcome to barMates bar side interface!  Please enter the username and password for your bar!</h5>
+            <form id="authenticateForm">
+              <label for="username">Username:</label>
+              <input type="text" id="username">
+              <label for="password">Password:</label>
+              <input type="password" id="password">
+              <button type="submit" name="button">Submit</button>
+            </form>
+          </div>
+
+        </div>
+      </body>
+
+      </html>

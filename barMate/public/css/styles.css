@@ -1,0 +1,312 @@
+
+
+#companySide {
+  display: none;
+}
+
+#customerSide {
+  display: none;
+}
+
+#selection {
+  text-align: center;
+}
+
+#version {
+  font-size: .5em;
+}
+
+#authenticate {
+  display: none;
+  text-align: center;
+  color: grey;
+}
+
+.center {
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+#orderButtons {
+  text-align: center;
+}
+
+.lineItem {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightgrey;
+}
+
+input {
+  margin: 15px;
+}
+
+.removeButton {
+  font-size: 12px;
+}
+
+.readyButton {
+  font-size: 12px;
+}
+/*
+//////////////////////////
+//                      //
+//                      //
+//    CSS Styling By    //
+//        Chris         //
+//                      //
+////////////////////////// */
+
+
+.body {
+  font-size: 18px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: black;
+  -webkit-filter: opacity(50%);
+}
+
+.head {
+  font-size: 20;
+  border-radius: 10px;
+  background-color: black;
+  -webkit-filter: opacity(50%);
+}
+#openQ {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 72px;
+  font-style: italic;
+  font-weight: bold;
+  color: white;
+  -webkit-filter: opacity(75%);
+}
+
+#explanation {
+  font-size: 24px;
+  align: center;
+  border-radius: 10px;
+  background-color: black;
+  -webkit-filter: opacity(50%);
+}
+
+#form1 {
+  background-color: rgba(135, 130, 130, 0.25);
+  padding: 10px;
+  border: solid;
+  border-radius: 15px;
+  height: 650px;
+  overflow: scroll;
+}
+
+#form1::-webkit-scrollbar {
+  width: 1em;
+}
+#form1::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.0);
+}
+
+
+p, h3 {
+  font-family: 'Ropa Sans', sans-serif;
+  color: lightgrey;
+}
+
+#body {
+  background: url(../images/wood.jpg) no-repeat center
+  center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  content: '';
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.fixed-nav-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 50px;
+  background-color: black;
+  display: none;
+}
+
+
+
+#companyPic{
+  box-shadow: 8px 8px 10px black;
+    border-radius: 15px;
+   -webkit-filter: brightness(100%);
+}
+#companyPic:hover {
+    cursor: pointer;
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#customerPic{
+    box-shadow: 8px 8px 10px black;
+    border-radius: 15px;
+   -webkit-filter: brightness(100%);
+}
+#customerPic:hover {
+  cursor: pointer;
+
+    -webkit-filter: brightness(50%);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+  vertical-align: middle;
+}
+
+video {
+  display: inline-block;
+  vertical-align: baseline;
+  object-fit: contain;
+}
+.video-wrapper video {
+  border-radius: 8px;
+  box-shadow: 80px 80px 150px black;
+  width: 100%;
+  z-index: -100;
+  background: no-repeat;
+  background-size: cover;
+  transition: ;
+    transition-property: opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+  }
+
+.video-wrapper p {
+  font-size: .5em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#currentTab ul li {
+  list-style-type: none;
+  font-weight: normal;
+}
+
+.video-wrapper {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto 45px;
+}
+.video-wrapper h3 {
+  color: #fff;
+  position: absolute;
+  top: 22%;
+  font-size: 60px;
+  text-align: center;
+  left: 0;
+  right: 0;
+}
+
+
+
+#logo {
+  width: 32%;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+
+.drinkCard div div p {
+  display: none;
+  font-weight: normal;
+}
+
+.drinkCard {
+  margin: 10px;
+  border: none;
+  box-shadow: 5px 5px 10px black;
+}
+
+.overlayColor {
+  background: rgba(75,200,75,0.52);
+  z-index: 2;
+  /* overflow: hidden; */
+}
+
+#useless {
+  border: 0px;
+}
+
+#sidenav  {
+  display: none;
+  position: fixed;
+  font-size: 15px;
+   padding: 2px;;
+   width: auto;
+   height: auto;
+   z-index: 100;
+   bottom: 45px;
+   right: 0px;
+   opacity: .9;
+   border: none;
+}
+.sideNavCard {
+  border: none;
+}
+
+#startOrder {
+  display: none;
+  position: fixed;
+  bottom: 5px;
+  right: 100px;
+  z-index: 99;
+  padding: 3px;
+  font-size: 20px;
+  background: #FFF;
+  border-radius: 5px;
+  text-transform: uppercase;
+  line-height: 14px;
+  cursor: pointer;
+  width: 100px;
+  height: 32px;
+}
+
+
+#userInfo {
+
+  display: none;
+  text-align: center;
+}
+
+#orderButtons {
+  display: none;
+  margin-left: 30px;
+}
+
+#tab {
+  display:none;
+  text-align: center;
+}
