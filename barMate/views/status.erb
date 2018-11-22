@@ -16,9 +16,9 @@
 <p><%= @rvn_mempool_info %></p>
 <ul>
   <li>Size = <%= @rvn_mempool_info["size"] %></li>
-  <li>Transaction size (MB (Bytes)) = <%= @rvn_mempool_info["bytes"]/1000000 %>(<%= @rvn_mempool_info["bytes"] %>)</li>
-  <li>Total memory usage (MB (B)) = <%= @rvn_mempool_info["usage"]/1000000 %>(<%= @rvn_mempool_info["usage"] %>)</li>
-  <li>Maximum memory usage for the mempool = <%= @rvn_mempool_info["maxmempool"]/1000000 %>(<%= @rvn_mempool_info["maxmempool"] %>)</li>
+  <li>Transaction size  = <%= @rvn_mempool_info["bytes"]/1000000 %> MB, <%= @rvn_mempool_info["bytes"] %> Bytes</li>
+  <li>Total memory usage  = <%= @rvn_mempool_info["usage"]/1000000 %> MB, <%= @rvn_mempool_info["usage"] %> Bytes</li>
+  <li>Maximum memory usage for the mempool = <%= @rvn_mempool_info["maxmempool"]/1000000 %> MB, <%= @rvn_mempool_info["maxmempool"] %> Bytes</li>
   <li>The lowest fee per kilobyte paid by any transaction in the memory pool = <%= @rvn_mempool_info["mempoolminfee"] %> RVN</li>
 </ul>
 <br>
