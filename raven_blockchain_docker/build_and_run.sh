@@ -1,3 +1,4 @@
+docker stop ravencoin
 docker rm ravencoin
 docker build -t ravencoin:current  .
 docker run -d \
