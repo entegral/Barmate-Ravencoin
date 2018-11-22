@@ -6,7 +6,4 @@ docker network create \
   --driver=bridge \
   --subnet=172.19.0.0/16 \
   raven-net 
-cd barMate
-./build-docker
-cd ../raven_blockchain_docker
-./build_and_run.sh
+echo 'docker network configured. Run the ravend docker then start the barmate docker.'

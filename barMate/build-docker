@@ -1,5 +1,6 @@
+docker rm barmate
 docker build -t barmate:current  .
-docker run -d \
+docker run -it \
     --network raven-net \
     --ip 172.19.0.3 \
     --name barmate \

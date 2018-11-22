@@ -1,3 +1,4 @@
+docker rm ravencoin
 docker build -t ravencoin:current  .
 docker run -d \
     --network raven-net \

@@ -11,7 +11,7 @@ RUN yum -y install net-tools.x86_64
 
 # Install vim
 RUN yum -y install epel-release
-RUN curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo
+RUN curl -o /etc/yum..repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo
 RUN yum -y install vim
 
 
@@ -30,4 +30,5 @@ RUN [ "$(sha256sum raven-2.1.3.0-x86_64-linux-gnu.tar.gz)" == "$(cat raven-2.1.3
 
 # Extract and start ravend
 RUN tar xvzf raven-2.1.3.0-x86_64-linux-gnu.tar.gz && cp raven-2.1.3.0/bin/* .
-RUN echo './ravend &' >> /root/.bashrc
+CMD ./ravend
+# RUN echo './ravend &' >> /root/.bashrc
