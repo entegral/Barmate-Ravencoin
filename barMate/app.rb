@@ -12,5 +12,8 @@ get ('/status') do
   @rvn_blockchain_info = query.getblockchaininfo
   @rvn_mining_info =  query.getmininginfo
   @rvn_mempool_info = query.getmempoolinfo
+  # @new_rvn_address = query.getnewaddress
+  @list_my_assets = query.listmyassets
+  @get_account_addresses = query.getaddressesbyaccount("")
   erb(:status)
 end
