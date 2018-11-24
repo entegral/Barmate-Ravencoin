@@ -9,12 +9,31 @@
 </p>
 <%# <p>New Unused Address = <%= @new_rvn_address %></p>
 <p>Total Account Balance (RVN)= <%= @rvn_wallet_info %></p>
-<p>Total Assets: 
+<p>Total Assets:
   <ol>
-    <% @list_my_assets.each do |asset| %>
-      <li><%= "#{asset[0]} : #{asset[1]}" %></li>
+    <% if @list_my_assets %>
+
+      <% @list_my_assets.each do |asset| %>
+        <li><%= "#{asset[0]} : #{asset[1]}" %></li>
+
+      <% end %>
     <% end %>
   </ol>
+  <form id="sendAsset" action="/sendAsset" method="post">
+    <select id="assetName">
+      <% if @list_my_assets %>
+
+        <% @list_my_assets.each do |asset| %>
+          <li><%= "#{asset[0]} : #{asset[1]}" %></li>
+          <option value="<%=asset[0]%>"><%= asset[0] %></option>
+
+        <% end %>
+      <% end %>
+      <input type="text" id="receipient" placeholder="Address To Send To" name="" value="">
+      <input type="number" id="ammount" placeholder="Number of assets to send" name="" value="">
+    </select>
+    <button type="submit" name="button">Send</button>
+  </form>
 </p>
 <br>
 <br>
@@ -47,4 +66,3 @@
 </ul>
 <br>
 <br>
-
