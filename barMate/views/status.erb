@@ -1,68 +1,152 @@
-<h1>Ravencoin Wallet Info</h1>
-<p>Account Name = Blank</p>
-<p>Account Addresses:
-   <ol>
-   <% @get_account_addresses.each do |address| %>
-    <li><%= address %></li>
-   <% end %>
-  </ol>
-</p>
-<%# <p>New Unused Address = <%= @new_rvn_address %></p>
-<p>Total Account Balance (RVN)= <%= @rvn_wallet_info %></p>
-<p>Total Assets:
-  <ol>
-    <% if @list_my_assets %>
+<div class="row col-md-12">
+  <h1>Ravencoin Wallet Info</h1>
+  <p>Account Name = Blank</p>
+  <div class="col-md-5">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="panel-title">Account Addresses</h3>
+      </div>
+      <div class="panel-body">
+        <ol>
+          <% @get_account_addresses.each do |address| %>
+            <li>
+              <%= address %>
+            </li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="row">
 
-      <% @list_my_assets.each do |asset| %>
-        <li><%= "#{asset[0]} : #{asset[1]}" %></li>
+      <div class="col-md-12">
 
-      <% end %>
-    <% end %>
-  </ol>
-  <form id="sendAsset" action="/sendAsset" method="post">
-    <select id="assetName">
-      <% if @list_my_assets %>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Total Account Balance (RVN)</h3>
+          </div>
+          <div class="panel-body">
+            <p><%= @rvn_wallet_info %></p>
+            <form id="sendRaven" action="/sendRaven" method="post">
+              <div class="form-group">
+                <input type="text" class="form-control" id="receipient" placeholder="Address To Send To" name="receipient" value="">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="ammount" placeholder="Number of assets to send" name="ammount" value="">
+              </div>
+              <button class="btn btn-info" type="submit" name="button">Send</button>
+            </form>
+          </div>
+        </div>
 
-        <% @list_my_assets.each do |asset| %>
-          <li><%= "#{asset[0]} : #{asset[1]}" %></li>
-          <option value="<%=asset[0]%>"><%= asset[0] %></option>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Assets Owned</h3>
+          </div>
+          <div class="panel-body">
+            <ol>
+              <% if @list_my_assets %>
+                <% @list_my_assets.each do |asset| %>
+                  <li>
+                    <%= "#{asset[0]} : #{asset[1]}" %>
+                  </li>
+                <% end %>
+              <% end %>
+            </ol>
+          </div>
+        </div>
 
-        <% end %>
-      <% end %>
-      <input type="text" id="receipient" placeholder="Address To Send To" name="" value="">
-      <input type="number" id="ammount" placeholder="Number of assets to send" name="" value="">
-    </select>
-    <button type="submit" name="button">Send</button>
-  </form>
-</p>
-<br>
-<br>
-<h1>Ravencoin Network Info:</h1>
-<h3>Ravencoin Blockchain Info:</h3>
-<ul>
-  <li>Block Height = <%= @rvn_blockchain_info["blocks"] %></li>
-  <li>Difficulty Algo = <%= @rvn_blockchain_info["difficulty_algorithm"] %></li>
-  <li>Network Difficulty = <%= @rvn_blockchain_info["difficulty"] %></li>
-  <li>Size On Disk = <%= @rvn_blockchain_info["size_on_disk"] %></li>
-</ul>
-<br>
-<br>
-<h3>Ravencoin Mining Info:</h3>
-<ul>
-  <li>Blocks = <%= @rvn_mining_info["blocks"] %></li>
-  <li>Current Block Transactions = <%= @rvn_mining_info["currentblocktx"] %></li>
-  <li>Difficulty = <%= @rvn_mining_info["difficulty"] %></li>
-  <li>Pooled Txns = <%= @rvn_mining_info["pooledtx"] %></li>
-</ul>
-<br>
-<br>
-<h3>Ravencoin Mem Pool Info:</h3>
-<ul>
-  <li>Size = <%= @rvn_mempool_info["size"] %></li>
-  <li>Transaction size  = <%= @rvn_mempool_info["bytes"].to_f/1000000 %> MB, <%= @rvn_mempool_info["bytes"] %> Bytes</li>
-  <li>Total memory usage  = <%= @rvn_mempool_info["usage"].to_f/1000000 %> MB, <%= @rvn_mempool_info["usage"] %> Bytes</li>
-  <li>Maximum memory usage for the mempool = <%= @rvn_mempool_info["maxmempool"].to_f/1000000 %> MB, <%= @rvn_mempool_info["maxmempool"] %> Bytes</li>
-  <li>The lowest fee per kilobyte paid by any transaction in the memory pool = <%= @rvn_mempool_info["mempoolminfee"] %> RVN</li>
-</ul>
-<br>
-<br>
+        <div class="panel panel-danger">
+          <div class="panel-heading">
+            <h3 class="panel-title">Send Assets</h3>
+          </div>
+          <div class="panel-body">
+            <form id="sendAsset" action="/sendAsset" method="post">
+              <div class="form-group">
+                <select class="form-control" id="assetName" name="assetName">
+                  <% if @list_my_assets %>
+                    <% @list_my_assets.each do |asset| %>
+                      <option value="<%=asset[0]%>">
+                        <%= asset[0] %>
+                      </option>
+                    <% end %>
+                  <% end %>
+                </select>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" id="receipient" placeholder="Address To Send To" name="receipient" value="">
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="ammount" placeholder="Number of assets to send" name="ammount" value="">
+              </div>
+              <button type="submit" class="btn btn-info" name="button">Send Asset</button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-md-6">
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Blockchain Data</h3>
+          </div>
+          <div class="panel-body">
+            <p>Block Height =
+              <%= @rvn_blockchain_info["blocks"] %>
+            </p>
+            <p>Difficulty Algo =
+              <%= @rvn_blockchain_info["difficulty_algorithm"] %>
+            </p>
+            <p>Network Difficulty =
+              <%= @rvn_blockchain_info["difficulty"] %>
+            </p>
+            <p>Size On Disk =
+              <%= @rvn_blockchain_info["size_on_disk"] %>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Memory Pool Status</h3>
+          </div>
+          <div class="panel-body">
+            <p>Size =
+              <%= @rvn_mempool_info["size"] %>
+            </p>
+            <p>Transaction size =
+              <%= @rvn_mempool_info["bytes"].to_f/1000000 %>
+              MB,
+              <%= @rvn_mempool_info["bytes"] %>
+              Bytes</p>
+            <p>Total memory usage =
+              <%= @rvn_mempool_info["usage"].to_f/1000000 %>
+              MB,
+              <%= @rvn_mempool_info["usage"] %>
+              Bytes</p>
+            <p>Maximum memory usage for the mempool =
+              <%= @rvn_mempool_info["maxmempool"].to_f/1000000 %>
+              MB,
+              <%= @rvn_mempool_info["maxmempool"] %>
+              Bytes</p>
+            <p>The lowest fee per kilobyte paid by any transaction in the memory pool =
+              <%= @rvn_mempool_info["mempoolminfee"] %>
+              RVN</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
