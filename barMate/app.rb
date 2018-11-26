@@ -22,7 +22,9 @@ post ('/sendRaven') do
   receipient = params.fetch('receipient')
   ammount = params.fetch('ammount')
   query.sendtoaddress(receipient,ammount.to_i)
-  "Congrats, #{ammount} Raven was sent to #{receipient}"
+  "Congrats, #{ammount} Raven was sent to #{receipient}. Page will redirect to wallet page in 15 seconds..."
+  sleep(15)
+  redirect '/'
 end
 
 post ('/sendAsset') do
@@ -31,5 +33,14 @@ post ('/sendAsset') do
   ammount = params.fetch('ammount')
   asset_name = params.fetch('assetName')
   query.transfer(asset_name, ammount.to_f, receipient)
-  "Congrats, #{ammount} #{asset_name} was sent to #{receipient}."
+  "Congrats, #{ammount} #{asset_name} was sent to #{receipient}. Page will redirect to wallet page in 15 seconds..."
+  sleep(15)
+  redirect '/'
+end
+
+get ('/update') do
+  # Once we have a database to work with, look up the account name that the tx was sent to and update their info with the new data.
+
+  @incoming_transaction = params['tx']
+
 end
