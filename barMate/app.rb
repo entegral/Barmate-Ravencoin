@@ -1,11 +1,8 @@
 require('sinatra')
 require('./lib/BitcoinRPC')
 
-get ('/') do
-  "Docker container and sinatra are set up!"
-end
 
-get ('/status') do
+get ('/') do
   query = BitcoinRPC.new('http://brucer:tenderTesticles@172.19.0.2:8766')
   @rvn_network_info = query.getnetworkinfo
   @rvn_wallet_info = query.getbalance
@@ -34,5 +31,5 @@ post ('/sendAsset') do
   ammount = params.fetch('ammount')
   asset_name = params.fetch('assetName')
   query.transfer(asset_name, ammount.to_f, receipient)
-  "Congrats, #{ammount} #{asset_name} was sent to #{receipient}"
+  "Congrats, #{ammount} #{asset_name} was sent to #{receipient}."
 end
