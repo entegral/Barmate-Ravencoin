@@ -22,9 +22,7 @@ post ('/sendRaven') do
   receipient = params.fetch('receipient')
   ammount = params.fetch('ammount')
   query.sendtoaddress(receipient,ammount.to_i)
-  "Congrats, #{ammount} Raven was sent to #{receipient}. Page will redirect to wallet page in 15 seconds..."
-  sleep(15)
-  redirect '/'
+  "Congrats, #{ammount} Raven was sent to #{receipient}."
 end
 
 post ('/sendAsset') do
@@ -33,9 +31,7 @@ post ('/sendAsset') do
   ammount = params.fetch('ammount')
   asset_name = params.fetch('assetName')
   query.transfer(asset_name, ammount.to_f, receipient)
-  "Congrats, #{ammount} #{asset_name} was sent to #{receipient}. Page will redirect to wallet page in 15 seconds..."
-  sleep(15)
-  redirect '/'
+  "Congrats, #{ammount} #{asset_name} was sent to #{receipient}."
 end
 
 get ('/update') do
