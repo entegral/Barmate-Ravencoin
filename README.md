@@ -6,7 +6,9 @@ This repo contains necessary files to start up a new barmate server with ravenco
 
 * Download this repo to local machine running docker
 * Setup docker virtual network, run:
-    > ./build-and-run-stack.sh
+```
+    ./build-and-run-stack.sh
+```
 * Build and run Ravencoin blockchain container:
 ```
     cd raven_blockchain_docker
