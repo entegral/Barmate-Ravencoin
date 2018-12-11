@@ -10,9 +10,6 @@ RUN yum -y install wget
 RUN yum -y install net-tools.x86_64
 
 # Install vim
-RUN yum -y install epel-release
-RUN curl -o /etc/yum..repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo
-RUN yum -y install vim
 
 
 # Install Raven binaries
