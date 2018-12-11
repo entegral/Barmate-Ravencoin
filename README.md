@@ -5,6 +5,16 @@ This repo contains necessary files to start up a new barmate server with ravenco
 ## To operate
 
 * Download this repo to local machine running docker
-* Run: 
+* Setup docker virtual network, run:
     > ./build-and-run-stack.sh
-* Docker should setup environmen, begin downloading blockchain, and start running the barmate server
+* Build and run Ravencoin blockchain container:
+```
+    cd raven_blockchain_docker
+    ./build_and_run.sh
+```
+* After blockchain has downloaded and been indexed (approx. 2-4 hours depending on hardware):
+```
+    cd barMate
+    ./build_and_run.sh
+```
+* You should now have two docker containers running on the same custom docker-bridge network. You will have to configure your raven.conf file with an RPC username and password in order to start making RPC calls.
