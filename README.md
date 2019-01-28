@@ -1,4 +1,4 @@
-# barmate-server
+# Barmate App with Ravencoin Integration
 This repo contains necessary files to start up a new barmate server with ravencoin payment integration
 
 
