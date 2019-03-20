@@ -19,10 +19,7 @@ _An app to help people place orders and help businesses maintain an efficient wo
 
 ![Customer Side](public/images/customer-screen.png)
 ![Home Screen](public/images/home-screen.png)
-![Home Screen](public/images/home-screen.png)
-![Customer Side](public/images/customer-screen.png)
-![Home Screen](public/images/home-screen.png)
-![Customer Side](public/images/customer-screen.png)
+
 
 ## Specifications
 
