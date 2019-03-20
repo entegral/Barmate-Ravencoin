@@ -17,8 +17,6 @@ _An app to help people place orders and help businesses maintain an efficient wo
 
 ## barMate in Action
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 ![Customer Side](public/images/customer-screen.png)
 ![Home Screen](public/images/home-screen.png)
 =======
@@ -121,6 +119,5 @@ Expected Output: remove object from pending list
 _GitHub, HTML, CSS, Bootstrap, Javascript, JQuery_
 
 ### License
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 Copyright (c) 2018 **_RB RS RM NN CR_** GNU General Public License 3.0
