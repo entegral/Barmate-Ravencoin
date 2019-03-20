@@ -1,4 +1,4 @@
-![barMate Logo](images/logo.png)
+![barMate Logo](public/images/logo.png)
 
 
 #### By _**Robert Bruce, Rohan Moore, Ngan Nguyen, Chris Rudnicky, Rubin Stricklin**_
