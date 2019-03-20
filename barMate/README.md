@@ -19,14 +19,10 @@ _An app to help people place orders and help businesses maintain an efficient wo
 
 ![Customer Side](public/images/customer-screen.png)
 ![Home Screen](public/images/home-screen.png)
-=======
-![Home Screen](images/home-screen.png)
-![Customer Side](images/customer-screen.png)
->>>>>>> 3360b657682d6f017e33ba5557296a7823215ebb
-=======
-![Home Screen](images/home-screen.png)
-![Customer Side](images/customer-screen.png)
->>>>>>> 3360b657682d6f017e33ba5557296a7823215ebb
+![Home Screen](public/images/home-screen.png)
+![Customer Side](public/images/customer-screen.png)
+![Home Screen](public/images/home-screen.png)
+![Customer Side](public/images/customer-screen.png)
 
 ## Specifications
 
