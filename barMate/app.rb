@@ -3,7 +3,7 @@ require('./lib/BitcoinRPC')
 
 
 get ('/') do
-  query = BitcoinRPC.new('http://brucer:tenderTesticles@172.19.0.2:8766')
+  query = BitcoinRPC.new('http://brucer:password@172.19.0.2:8766')
   @rvn_network_info = query.getnetworkinfo
   @rvn_wallet_info = query.getbalance
   @rvn_blockchain_info = query.getblockchaininfo
@@ -18,7 +18,7 @@ get ('/') do
 end
 
 post ('/sendRaven') do
-  query = BitcoinRPC.new('http://brucer:tenderTesticles@172.19.0.2:8766')
+  query = BitcoinRPC.new('http://http://brucer:password@172.19.0.2:8766')
   receipient = params.fetch('receipient')
   ammount = params.fetch('ammount')
   query.sendtoaddress(receipient,ammount.to_i)
@@ -26,7 +26,7 @@ post ('/sendRaven') do
 end
 
 post ('/sendAsset') do
-  query = BitcoinRPC.new('http://brucer:tenderTesticles@172.19.0.2:8766')
+  query = BitcoinRPC.new('http://http://brucer:password@172.19.0.2:8766')
   receipient = params.fetch('receipient')
   ammount = params.fetch('ammount')
   asset_name = params.fetch('assetName')
